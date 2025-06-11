@@ -3,9 +3,9 @@
 MaskDamageReads.py is a command-line tool to mask the damaged bases in ancient DNA reads and
 it can also extract the reads with damage bases. This script requires Python 3 and pysam (version >= 0.22.1).
 
-Citation: XXXX
+Citation: Fu Q, Cao P, Dai Q, Bennett EA, Feng X, Yang MA, et al. Denisovan mitochondrial DNA from dental calculus of the >146,000-year-old Harbin cranium. Cell. 2025
 
-Fan BAI, Qiaomei FU, Feb 2025; Code released under GNU General Public License v3.0.
+Code released under GNU General Public License v3.0.
 
 ## Overview
 
