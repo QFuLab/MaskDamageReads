@@ -1,7 +1,7 @@
 # MaskDamageReads
 
 MaskDamageReads.py is a command-line tool to mask the damaged bases in ancient DNA reads and
-it can also extract the reads with damage bases. This script requires Python 3 and pysam (version >= 0.22.1).
+it can also extract the reads with damaged bases. This script requires Python 3 and pysam (version >= 0.22.1).
 
 Citation: Fu Q, Cao P, Dai Q, Bennett EA, Feng X, Yang MA, et al. Denisovan mitochondrial DNA from dental calculus of the >146,000-year-old Harbin cranium. Cell. 2025
 
@@ -15,11 +15,11 @@ In default mode, masking is only applied to the potentially damaged aligned read
 
 The default mode may introduce reference bias when the sequencing depth is low (<=1x) because the script masks all C>T and G>A variations. If a site is covered only once, true C>T and G>A mutations will also be masked. However, if a site is covered more than once, the real alternative read bases (those not at the ends) will be retained.
 
-For low sequencing depth data, we recommend using the '--mode low_coverage' flag. In this mode, the script changes all C and T, G and A read bases to 'N', regardless of the reference base. Although this mode removes more data, it provides more accurate allele frequency estimates.
+For low sequencing depth data, we recommend using the '--mode low_coverage' flag. In this mode, the script changes all C and T, G, and A read bases to 'N', regardless of the reference base. Although this mode removes more data, it provides more accurate allele frequency estimates.
 
-No genome reference file is required, as the reference sequence can be reconstructed from the MD tag in the BAM file, so the BAM file **must** contain MD tag.
+No genome reference file is required, as the reference sequence can be reconstructed from the MD tag in the BAM file, so the BAM file **must** contain the MD tag.
 
-With the '--extract-damaged' flag, this script will generate a BAM file containing only reads which have at least one damaged base (T or A, differ from reference base C or G ) within the region specified by the '--termini' parameter.
+With the '--extract-damaged' flag, this script will generate a BAM file containing only reads that have at least one damaged base (T or A, differ from reference base C or G ) within the region specified by the '--termini' parameter.
 
 ## Usage
 
