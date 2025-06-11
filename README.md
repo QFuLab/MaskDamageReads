@@ -13,7 +13,7 @@ This script performs masking of potentially damaged bases in a BAM file, either 
 
 In default mode, masking is only applied to the potentially damaged aligned read bases that differ from the reference base. This means that masking occurs only when the aligned read base is T or A and the reference base is C or G. If the read base is C or G, or if the read and reference bases are identical (e.g., T or A), no masking will occur.
 
-The default mode may introduce reference bias when the sequencing depth is low (<=1x) because the script masks all C>T and G>A variations. If a site is covered only once, true C>T and G>A mutations will also be masked. However, if a site is covered more than once, the real alternative read bases (those not at the ends) will be retained.
+The default mode may introduce reference bias when the sequencing depth is too low because the script masks all C>T and G>A variations. If a site is covered only once, true C>T and G>A mutations will also be masked. However, if a site is covered more than once, the real alternative read bases (those not at the ends) will be retained.
 
 For low sequencing depth data, we recommend using the '--mode low_coverage' flag. In this mode, the script changes all C and T, G, and A read bases to 'N', regardless of the reference base. Although this mode removes more data, it provides more accurate allele frequency estimates.
 
