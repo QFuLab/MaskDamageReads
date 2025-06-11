@@ -1,6 +1,6 @@
 # MaskDamageReads
 
-MaskDamageReads.py is a command-line tool to mask the damaged bases in ancient DNA reads and
+MaskDamageReads.py is a command-line tool to mask the damaged bases in ancient DNA reads, and
 it can also extract the reads with damaged bases. This script requires Python 3 and pysam (version >= 0.22.1).
 
 Citation: Fu Q, Cao P, Dai Q, Bennett EA, Feng X, Yang MA, et al. Denisovan mitochondrial DNA from dental calculus of the >146,000-year-old Harbin cranium. Cell. 2025
@@ -42,24 +42,24 @@ options:
                         Mode selection: normal or low_coverage (Default: normal; see README for details)
   --extract-damaged     Flag to extract damaged reads (Default: False)
   --output-masked-position
-                        Flag to output the coordinates of each N this script added into a bed file (Default: False)
+                        Flag to output the coordinates of each N that this script added into a bed file (Default: False)
 ```
 
 ## Example
 
-* Masking 5 bps from the 5'' and 3'' end in a single-strand library BAM file: 
+* Masking 5 bps from the 5' and 3' ends in a single-strand library BAM file: 
 
   `python ./MaskDamageReads.py -i SS.bam -t 5 -l SS -o SS.masked.t5.bam` 
 
   ![Masked SS BAM](/fig/SS.mask.png "SS BAM before and after masking")
 
-* Masking 1 bp from the 5'' end and 2 bps from the 3'' end in a double-strand library BAM file: 
+* Masking 1 bp from the 5' end and 2 bps from the 3' end in a double-strand library BAM file: 
 
   `python ./MaskDamageReads.py -i DS.bam -t 1,2 -l DS -o DS.masked.t1-2.bam` 
   
   ![Masked DS BAM](/fig/DS.mask.png "DS BAM before and after masking")
 
-* Extracting reads with damaged 1st base from the 5'' end in a double-strand library BAM file: 
+* Extracting reads with damaged 1st base from the 5' end in a double-strand library BAM file: 
 
   `python ./MaskDamageReads.py -i DS.bam -t 1,0 -l DS -o DS.extracted.t1-0.bam --extract-damaged`
   

@@ -30,7 +30,7 @@ def parse_args():
     parser.add_argument('--extract-damaged', action='store_true', 
                         help="Flag to extract damaged reads (Default: False)")
     parser.add_argument('--output-masked-position', action='store_true', 
-                        help="Flag to output the coordinates of each N this script added into a bed file (Default: False)")
+                        help="Flag to output the coordinates of each N that this script added into a bed file (Default: False)")
     args = parser.parse_args()
     return args
 
