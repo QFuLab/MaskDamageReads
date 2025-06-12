@@ -4,6 +4,23 @@
 import pysam
 import argparse
 
+"""
+MaskDamageReads.py
+
+This script performs masking of potentially damaged bases in a BAM file 
+either across the entire read or by a user-specified length from the 
+ends, outputting a masked BAM file where damaged bases are changed to 
+'N' and quality scores at these bases made 0. Masking is done in a 
+strand aware manner, depending on whether the library is double or 
+single strand. Please check the README for more information.
+
+By: Dan JU & Fan BAI  
+
+Citation: Fu Q, Cao P, Dai Q, Bennett EA, Feng X, Yang MA, et al. 
+Denisovan mitochondrial DNA from dental calculus of the >146,000-year-old 
+Harbin cranium. Cell. 2025
+"""
+
 def termini_par(value):
     try:
         return {'5p': int(value), '3p': int(value)}
